@@ -1,5 +1,28 @@
+;; personal information
+(setq user-full-name "Liangcheng Yu"
+      user-mail-address "liangcheng.yu46@gmail.com"
+      calendar-location-name "somewhere")
+
 ;; prefer material theme
 (load-theme 'material t)
+
+;; set a default font
+;; hack
+;; (add-to-list 'default-frame-alist '(font . "Hack"))
+;; (set-face-attribute 'default nil
+;;		    :family "Hack")
+;; source code pro
+;; (set-face-attribute 'default nil
+;;                     :family "Source Code Pro"
+;;                     :height 110
+;;                     :weight 'normal
+;;                     :width 'normal)
+;; momo
+(add-to-list 'default-frame-alist
+             '(font . "DejaVu Sans Mono-10"))
+
+;; set hot key for mark, esp, for MAC, less convenient alternatives: C+@, or C-x C-x
+(global-set-key (kbd "M-SPC") 'set-mark-command) 
 
 ;; F2 for hooking init.el file
 (defun open-init-file()
@@ -25,11 +48,43 @@
 ;; set kill subtree protection with a query
 (setq org-ctrl-k-protect-subtree 1)
 
+;; Functions for inserting timestamps, Author: Perry E. Metzger
+(defun insert-timestamp ()
+  "Insert the date and time into the current buffer."
+  (interactive)
+  (insert (format-time-string "%a %b %e %Y, %R")))
+(global-set-key "\C-ct" 'insert-timestamp)
+
+;; babel
+;; to simplify init.el, it will look over the doc and evaluate all code blocks that are emacs lisp sequentially
+;; (org-babel-load-file "~/.emacs.d/config.org")
+
+;; UI perferences
+;; remove tool bar, menu bar, scroll bar for useful spaces
+(tool-bar-mode 0)
+(menu-bar-mode 0)
+(scroll-bar-mode -1)
+;; highlight the current line
+(global-hl-line-mode)
+;; remove startup screen
+(setq inhibit-startup-screen t)
+(setq inhibit-startup-message t)
+;; set customized scratch msg
+(setq initial-scratch-message "The Editor of a Lifetime: I dont care about the OS i use, it is just a boot loader for Emacs anyway.")
+
 ;; set only one buffer for dired mode
 (put 'dired-find-alternate-file 'disabled nil)
 ;; set recursive as default
 (setq dired-recursive-deletes 'always)
 (setq dired-recursive-copies 'always)
+;; ask before recursively deleting a directory, though
+(setq dired-recursive-deletes 'top)
+
+;; kill current buffer without prompting
+(defun hrs/kill-current-buffer ()
+  "Kill the current buffer without prompting."
+  (interactive)
+  (kill-buffer (current-buffer)))
 
 ;; add packet archive melpa
 (when (>= emacs-major-version 24)
@@ -42,10 +97,7 @@
 (global-set-key (kbd "C-c a") 'org-agenda)
 (setq org-agenda-files '("~/my-emacs/my-org-mode/"))
 ;; (setq org-agenda-files '("~/my-emacs/my-org-mode/root.org"
-;;                       "~/my-emacs/my-org-mode/programming.org"
-;;			 "~/my-emacs/my-org-mode/mushroom.org"
 ;;			 "~/my-emacs/my-org-mode/machinelearning.org"
-;;			 "~/my-emacs/my-org-mode/emacs.org"
 ;;			 ))
 (defun air-org-skip-subtree-if-priority (priority)
   "Skip an agenda subtree if it has a priority of PRIORITY.
