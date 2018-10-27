@@ -18,7 +18,8 @@
 ;; manually install packages via:
 ;; M-x package-install RET markdown-mode
 
-(org-babel-load-file "~/.emacs.d/config.org")
+(defconst root-path "~/emacs.d/")
+(org-babel-load-file (concat root-path "config.org"))
 
 
 

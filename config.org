@@ -1,10 +1,12 @@
 #+BEGIN_SRC emacs-lisp
+;;(defconst root-path "~/emacs.d/")
+
 ;; Measure startup time
-(add-to-list 'load-path "~/.emacs.d/modules/")
+(add-to-list 'load-path (concat root-path "modules/"))
 (require 'benchmarking)
 
 ;; prefer material theme
-(add-to-list 'custom-theme-load-path "~/.emacs.d/modules/themes/")
+(add-to-list 'custom-theme-load-path (concat root-path "modules/themes/"))
 (load-theme 'material t)
 
 (require 'basic)
@@ -15,12 +17,11 @@
 (require 'buffer)
 (require 'agenda)
 
-(add-to-list 'load-path "~/.emacs.d/modules/")
 (require 'org-bullets)
 
-(add-to-list 'load-path "~/.emacs.d/modules/lang/")
+(add-to-list 'load-path (concat root-path "modules/lang/"))
 (require 'cpp)
 
-(add-to-list 'load-path "~/.emacs.d/modules/app/")
+(add-to-list 'load-path (concat root-path "modules/app/"))
 (require 'web-browsing)
 #+END_SRC
