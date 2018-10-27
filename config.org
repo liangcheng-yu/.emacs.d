@@ -1,0 +1,26 @@
+#+BEGIN_SRC emacs-lisp
+;; Measure startup time
+(add-to-list 'load-path "~/.emacs.d/modules/")
+(require 'benchmarking)
+
+;; prefer material theme
+(add-to-list 'custom-theme-load-path "~/.emacs.d/modules/themes/")
+(load-theme 'material t)
+
+(require 'basic)
+(require 'org-mode)
+(require 'key-bindings)
+(require 'ui)
+(require 'dired)
+(require 'buffer)
+(require 'agenda)
+
+(add-to-list 'load-path "~/.emacs.d/modules/")
+(require 'org-bullets)
+
+(add-to-list 'load-path "~/.emacs.d/modules/lang/")
+(require 'cpp)
+
+(add-to-list 'load-path "~/.emacs.d/modules/app/")
+(require 'web-browsing)
+#+END_SRC
