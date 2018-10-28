@@ -26,5 +26,5 @@
 ;;         ("c" "3" entry (file+headline "~/my-emacs/my-org-mode/english.org" "3")
 ;;          "* %^{4} \n- Synonym: %^{4}\n- Antonym: %^{2}\n- Confusing words: %^{3}\n- Example:\n %^{4}")))
 
-(provide 'org-mode)
+(provide 'org-mode-basic)
 

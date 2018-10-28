@@ -1,9 +1,9 @@
 ;; set agenda related
 (global-set-key (kbd "C-c a") 'org-agenda)
-(setq org-agenda-files '("~/my-emacs/my-org-mode/"))
-;; (setq org-agenda-files '("~/my-emacs/my-org-mode/root.org"
-;;			 "~/my-emacs/my-org-mode/machinelearning.org"
-;;			 ))
+(setq org-agenda-files '("~/my-emacs/my-org-mode/"
+			 "~/ML-Net-Plus/Documentation/README.org"
+			 )
+      )
 (defun air-org-skip-subtree-if-priority (priority)
   "Skip an agenda subtree if it has a priority of PRIORITY.
 PRIORITY may be one of the characters ?A, ?B, or ?C."

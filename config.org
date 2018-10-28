@@ -1,7 +1,13 @@
 * Emacs Configuration
 Configuration customized or borrowed from many places.
+** Resources
+*** An Introduction to Programming in Emacs Lisp, Robert J. Chassell
+https://www.gnu.org/software/emacs/manual/pdf/eintr.pdf
+** Mixed Configuration
 #+BEGIN_SRC emacs-lisp
 ;;(defconst root-path "~/emacs.d/")
+
+(add-to-list 'load-path contrib-path)
 
 ;; Measure startup time
 (add-to-list 'load-path (concat root-path "modules/"))
@@ -12,7 +18,6 @@ Configuration customized or borrowed from many places.
 (load-theme 'material t)
 
 (require 'basic)
-(require 'org-mode)
 (require 'key-bindings)
 (require 'ui)
 (require 'dired-mode)
@@ -35,11 +40,15 @@ Configuration customized or borrowed from many places.
               (run-with-timer 1 nil 'qs-fetch-qod))
 )
 
+(add-to-list 'load-path (concat root-path "modules/org-mode/"))
+(require 'org-mode-basic)
 (require 'org-bullets)
+(require 'org-drill-config)
 
 (add-to-list 'load-path (concat root-path "modules/lang/"))
 (require 'cpp)
 
 (add-to-list 'load-path (concat root-path "modules/app/"))
 (require 'web-browsing)
+;;(require 'pcap-mode)
 #+END_SRC
