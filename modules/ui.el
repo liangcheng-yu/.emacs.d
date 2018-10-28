@@ -17,9 +17,6 @@
 (setq inhibit-startup-screen t)
 (setq inhibit-startup-message t)
 
-;; set customized scratch msg
-(setq initial-scratch-message "The Editor of a Lifetime: I dont care about the OS i use, it is just a boot loader for Emacs anyway.")
-
 ;; the blinking cursor is nothing but an annoyance
 (blink-cursor-mode -1)
 
