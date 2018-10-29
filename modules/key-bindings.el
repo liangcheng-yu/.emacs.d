@@ -107,12 +107,35 @@
 ;; set hot key for mark, esp, for MAC, less convenient alternatives: C+@, or C-x C-x
 (global-set-key (kbd "M-SPC") 'set-mark-command)
 
+;; F1 for hooking emacs.d/config.org
+(defun open-config-file()
+  (interactive)
+  (find-file "~/emacs.d/config.org"))
+(global-set-key (kbd "<f1>") 'open-config-file)
+
 ;; F2 for hooking init.el file
 (defun open-init-file()
   (interactive)
   (find-file "~/.emacs.d/init.el"))
 (global-set-key (kbd "<f2>") 'open-init-file)
 
-;; add hot key for enlarging windows
+;; F3 for hooking ML-Net-Plus/documentation/README.org file
+(defun open-project-file()
+  (interactive)
+  (find-file "~/ML-Net-Plus/documentation/README.org"))
+(global-set-key (kbd "<f3>") 'open-project-file)
 
+;; F4 for hooking zxy-ylc-work/random/flashcards.org
+(defun open-flashcard-file()
+  (interactive)
+  (find-file "~/zxyylc-work/random/flashcards.org"))
+(global-set-key (kbd "<f4>") 'open-flashcard-file)
+
+;; F5 for hooking zxy-ylc-work/random/flashcards.org
+(defun open-random-file()
+  (interactive)
+  (find-file "~/my-emacs/my-org-mode/random.org"))
+(global-set-key (kbd "<f5>") 'open-random-file)
+
+;; add hot key for enlarging windows
 (provide 'key-bindings)

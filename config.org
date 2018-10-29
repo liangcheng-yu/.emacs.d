@@ -52,3 +52,60 @@ https://www.gnu.org/software/emacs/manual/pdf/eintr.pdf
 (require 'web-browsing)
 ;;(require 'pcap-mode)
 #+END_SRC
+** ediff
+#+BEGIN_SRC emacs-lisp
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; ediff                                                                  ;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+(require 'ediff)
+;; don't start another frame
+;; this is done by default in preluse
+(setq ediff-window-setup-function 'ediff-setup-windows-plain)
+;; put windows side by side
+(setq ediff-split-window-function (quote split-window-horizontally))
+
+;; Restoring the windows after Ediff quits
+;;revert windows on exit - needs winner mode
+(winner-mode)
+(add-hook 'ediff-after-quit-hook-internal 'winner-undo)
+
+;; Ignore white space.
+(setq ediff-diff-options "-w")
+
+;; j to move down, k to move up
+(defun ora-ediff-hook ()
+  (ediff-setup-keymap)
+  (define-key ediff-mode-map "j" 'ediff-next-difference)
+  (define-key ediff-mode-map "k" 'ediff-previous-difference))
+
+(add-hook 'ediff-mode-hook 'ora-ediff-hook)
+#+END_SRC
+** tags
+*** Set tags
+**** C-c C-q  org-set-tags-command
+*** Search tags
+https://orgmode.org/manual/Matching-tags-and-properties.html
+https://orgmode.org/worg/org-tutorials/advanced-searching.html
+**** C-c a m  org-tags-view
+**** 输入关键词的时候还可以使用与或非运算
+***** work
+Select headlines tagged ‘:work:’.
+***** work&boss
+Select headlines tagged ‘:work:’ and ‘:boss:’.
+***** +work-boss
+Select headlines tagged ‘:work:’, but discard those also tagged ‘:boss:’.
+***** work|laptop
+Selects lines tagged ‘:work:’ or ‘:laptop:’.
+***** work|laptop+night
+Like before, but require the ‘:laptop:’ lines to be tagged also ‘:night:’.
+***** work+TODO="WAITING"
+Select ‘:work:’-tagged TODO lines with the specific TODO keyword ‘WAITING’.
+***** work+TODO="WAITING"|home+TODO="WAITING"
+Waiting tasks both at work and at home.
+***** When matching properties
++work-boss+PRIORITY="A"+Coffee="unlimited"+Effort<2         \
+         +With={Sarah\|Denny}+SCHEDULED>="<2008-10-11>"
+***** Others
+Instead of a tag, you may also specify a regular expression enclosed in curly braces. For example, ‘work+{^boss.*}’ matches headlines that contain the tag ‘:work:’ and any tag starting with ‘boss’.
+*** preventing right alignment of tags
+(setq org-tags-column 0)

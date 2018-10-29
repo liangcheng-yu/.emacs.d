@@ -9,4 +9,7 @@
 
 ;; (setq org-drill-spaced-repetition-algorithm 'sm2)
 
+;; typically not needed
+;; (setq org-drill-scope (file1 file2 …))
+
 (provide 'org-drill-config)
