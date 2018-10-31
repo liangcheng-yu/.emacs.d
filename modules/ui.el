@@ -41,4 +41,12 @@
 ;;(add-to-list 'default-frame-alist
 ;;             '(font . "DejaVu Sans Mono-10"))
 
+;; highlighting text is so painful in org-mode!
+;; remove the annoying the markers
+(setq org-hide-emphasis-markers t)
+;; perfer using / to highlight the key concepts as building blocks
+(add-to-list 'org-emphasis-alist
+             '("/" (:foreground "red")
+               ))
+
 (provide 'ui)

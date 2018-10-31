@@ -101,8 +101,11 @@
   )
 (global-set-key "\M-!" 'line-to-top)
 
-;;(global-set-key (kbd "\C-x\M-c") 'comment-region)
-;;(global-set-key (kbd "\C-x\M-u") 'uncomment-region)
+(global-set-key "\C-x\M-c" 'comment-region)
+(global-set-key "\C-x\M-u" 'uncomment-region)
+
+;; prefer C-x t?
+(global-set-key "\C-x\C-t" 'toggle-truncate-lines)
 
 ;; set hot key for mark, esp, for MAC, less convenient alternatives: C+@, or C-x C-x
 (global-set-key (kbd "M-SPC") 'set-mark-command)

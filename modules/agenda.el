@@ -2,6 +2,7 @@
 (global-set-key (kbd "C-c a") 'org-agenda)
 (setq org-agenda-files '("~/my-emacs/my-org-mode/"
 			 "~/ML-Net-Plus/Documentation/README.org"
+			 "~/zxyylc-work/random/flashcards.org"
 			 )
       )
 (defun air-org-skip-subtree-if-priority (priority)
