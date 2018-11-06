@@ -51,6 +51,8 @@ https://www.gnu.org/software/emacs/manual/pdf/eintr.pdf
 (add-to-list 'load-path (concat root-path "modules/app/"))
 (require 'web-browsing)
 ;;(require 'pcap-mode)
+
+(require 'terminal)
 #+END_SRC
 ** ediff
 #+BEGIN_SRC emacs-lisp
@@ -80,6 +82,8 @@ https://www.gnu.org/software/emacs/manual/pdf/eintr.pdf
 
 (add-hook 'ediff-mode-hook 'ora-ediff-hook)
 #+END_SRC
+** org-habbit
+https://blog.aaronbieber.com/2016/09/24/an-agenda-for-life-with-org-mode.html
 ** tags
 *** Set tags
 **** C-c C-q  org-set-tags-command

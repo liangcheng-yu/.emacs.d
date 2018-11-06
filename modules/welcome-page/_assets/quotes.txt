@@ -24,8 +24,7 @@ CIFS，那很可能稍加点拨就能完全理解NFS；同样如果你理解了�
 辄止，那学习其他技术也会停留在表面上。我有位技术出色的朋友用过一个生动
 的比喻来说明这个问题：技术深度和广度的关系，就像登山时的高度和视野。假
 如你爬到半山腰就停下来眺望，就只能看到一半的视野；但如果埋头爬到山顶，
-一抬头便是无边的风景。
-"
+一抬头便是无边的风景。"
 						- 林沛满
 
 "关于创业，我想没有哪个行业比IT 界更热衷于此了。或许是因为这一行有过
@@ -37,6 +36,25 @@ CIFS，那很可能稍加点拨就能完全理解NFS；同样如果你理解了�
 有位朋友到福建承包一片山林之后，很快发现这东西并没有想象中那么赚钱。终
 于在花光所有积蓄之后，萌发了“不如归去”的念头。虽然听上去颇有禅意，其
 实心里还是很懊悔的，最后不仅回到原来公司，还坐到原来的位子上。当然成功
-者也是有的，不要妒嫉他们，因为这是冒着风险得到的。
-"
+者也是有的，不要妒嫉他们，因为这是冒着风险得到的。"
 						- 林沛满
+
+"上帝借由各种途径使人变得孤独。
+好让我们可以走向自己。"
+						- 《德米安》 赫尔曼•黑塞（Hermann Hesse）
+
+"A struct simply feels like an open pile of bits with very
+little in the way of encapsulation or functionality.
+A class feels like a living and responsible member of society
+with intelligent services, a strong encapsulation barrier, and
+a well defined interface."
+						- Bjarne Stroustrup
+
+"One of the most important lessons an upstart computer scientist or
+software engineer can learn is decomposition or factoring –
+breaking problems down into smaller and smaller pieces and solving
+each subproblem separately.
+At the heart of decomposition is the concept of generality – code
+should avoid overspecializing on a single problem and should be
+robust enough to adapt to other situations."
+						- CS106L Standard C++ Programming, Course Reader
