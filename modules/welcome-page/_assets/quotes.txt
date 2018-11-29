@@ -58,3 +58,35 @@ At the heart of decomposition is the concept of generality – code
 should avoid overspecializing on a single problem and should be
 robust enough to adapt to other situations."
 						- CS106L Standard C++ Programming, Course Reader
+
+"The most profound technologies are those that disappear.
+They weave themselves into the fabric of everyday life until
+they are indistinguishable from it."
+						- Mark Weiser
+
+"- Whenever someone asks me if reinforcement learning can solve their problem,
+I tell them it can’t. I think this is right at least 70% of the time.
+- We should learn how to set realistic research expectations.
+- It’s easy to write a story around a positive result.
+It’s hard to do the same for negative ones.
+- The problem is that the negative ones are the ones that researchers run into the most often.
+- I am criticizing the empirical behavior of deep reinforcement learning, not reinforcement learning in general.
+- It’s easier to build agreement if people actually talk about the problems,
+instead of independently re-discovering the same issues over and over again.
+"
+						- Deep Reinforcement Learning doesnt Work Yet
+
+"一个同事曾告诉我，他的一个朋友在一段时间里用码表记录自己每周做研究工作的时间。令他震惊的是，
+除去每天当中他陷入的所有其他事情–中断，邮件，上网，电话，没成效的会议，和朋友聊天等，
+他平均每天只用了半小时在研究工作上。如果说这是许多研究者的典型情况，我并不对此感到意外。
+"
+						- 物理学家Michael Nielsen
+
+"All problems in computer science can be solved by another level of indirection.
+"
+						- David Wheeler
+
+"Don't educate your children to be rich. Educate them to be Happy.
+So when they grow up, they will know the value of things not the price.
+"
+						- ?

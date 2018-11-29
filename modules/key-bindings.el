@@ -131,7 +131,7 @@
 ;; F4 for hooking zxy-ylc-work/random/flashcards.org
 (defun open-flashcard-file()
   (interactive)
-  (find-file "~/zxyylc-work/random/flashcards.org"))
+  (find-file "~/my-emacs/my-org-mode/flashcards.org"))
 (global-set-key (kbd "<f4>") 'open-flashcard-file)
 
 ;; F5 for hooking zxy-ylc-work/random/flashcards.org

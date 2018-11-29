@@ -91,7 +91,7 @@ https://blog.aaronbieber.com/2016/09/24/an-agenda-for-life-with-org-mode.html
 https://orgmode.org/manual/Matching-tags-and-properties.html
 https://orgmode.org/worg/org-tutorials/advanced-searching.html
 **** C-c a m  org-tags-view
-**** 输入关键词的时候还可以使用与或非运算
+**** complex
 ***** work
 Select headlines tagged ‘:work:’.
 ***** work&boss

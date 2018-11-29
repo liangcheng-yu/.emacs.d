@@ -2,7 +2,6 @@
 (global-set-key (kbd "C-c a") 'org-agenda)
 (setq org-agenda-files '("~/my-emacs/my-org-mode/"
 			 "~/ML-Net-Plus/Documentation/README.org"
-			 "~/zxyylc-work/random/flashcards.org"
 			 )
       )
 (defun air-org-skip-subtree-if-priority (priority)
@@ -42,4 +41,16 @@ PRIORITY may be one of the characters ?A, ?B, or ?C."
                    ((org-agenda-skip-function
                      '(or (air-org-skip-subtree-if-priority ?A)
                           (org-agenda-skip-if nil '(scheduled deadline))))))))))
+
+;; clock
+;; If idle for more than 15 minutes, resolve the things by asking what to do
+;; with the clock time
+(setq org-clock-idle-time 15)
+;; k	keep some or all minutes and stay clocked in
+;; K	keep some or all minutes and clock out
+;; s	keep 0 minutes, and subtract some amount from the clock, clocking back in
+;; S	keep 0 minutes, subtract some amount from the clock, and clock out
+;; C	cancel the clock altogether
+
+
 (provide 'agenda)
