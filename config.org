@@ -1,79 +1,34 @@
-* Emacs Configuration
-Configuration customized or borrowed from many places.
-** Resources
-*** An Introduction to Programming in Emacs Lisp, Robert J. Chassell
-https://www.gnu.org/software/emacs/manual/pdf/eintr.pdf
-** Mixed Configuration
+* Minical Configuraion
 #+BEGIN_SRC emacs-lisp
-;;(defconst root-path "~/emacs.d/")
-
 (add-to-list 'load-path contrib-path)
-
-;; Measure startup time
 (add-to-list 'load-path (concat root-path "modules/"))
-(require 'benchmarking)
 
 ;; prefer material theme
 (add-to-list 'custom-theme-load-path (concat root-path "modules/themes/"))
 (load-theme 'material t)
 
+;; load custom modules
 (require 'basic)
 (require 'key-bindings)
-(require 'ui)
-(require 'dired-mode)
-(require 'buffer)
 (require 'agenda)
 
-(add-to-list 'load-path (concat root-path "modules/welcome-page/"))
-;;(require 'scratch-message)
-(require 'quoted-scratch)
-(setq initial-scratch-message nil)
-(add-hook 'emacs-startup-hook
-            (lambda ()
-              (run-with-timer 1 nil 'qs-refresh-scratch-buffer)
-              (qs-refresh-quote-when-idle)))
-;; You can add new quotes to the collection or have the Quote of the Day from
-;; [http://quotes.rest/](http://quotes.rest).
-;; For the latter:
-(add-hook 'emacs-startup-hook
-            (lambda ()
-              (run-with-timer 1 nil 'qs-fetch-qod))
-)
-
+;; OrgMode and Org-bullets
 (add-to-list 'load-path (concat root-path "modules/org-mode/"))
 (require 'org-mode-basic)
 (require 'org-bullets)
-(require 'org-drill-config)
-
-(add-to-list 'load-path (concat root-path "modules/lang/"))
-(require 'cpp)
-
-(add-to-list 'load-path (concat root-path "modules/app/"))
-(require 'web-browsing)
-;;(require 'pcap-mode)
-
-(require 'terminal)
 #+END_SRC
-** ediff
+* ediff
 #+BEGIN_SRC emacs-lisp
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; ediff                                                                  ;;
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 (require 'ediff)
 ;; don't start another frame
-;; this is done by default in preluse
 (setq ediff-window-setup-function 'ediff-setup-windows-plain)
 ;; put windows side by side
 (setq ediff-split-window-function (quote split-window-horizontally))
 
-;; Restoring the windows after Ediff quits
-;;revert windows on exit - needs winner mode
 (winner-mode)
 (add-hook 'ediff-after-quit-hook-internal 'winner-undo)
-
-;; Ignore white space.
+;; ignore white space.
 (setq ediff-diff-options "-w")
-
 ;; j to move down, k to move up
 (defun ora-ediff-hook ()
   (ediff-setup-keymap)
@@ -82,34 +37,3 @@ https://www.gnu.org/software/emacs/manual/pdf/eintr.pdf
 
 (add-hook 'ediff-mode-hook 'ora-ediff-hook)
 #+END_SRC
-** org-habbit
-https://blog.aaronbieber.com/2016/09/24/an-agenda-for-life-with-org-mode.html
-** tags
-*** Set tags
-**** C-c C-q  org-set-tags-command
-*** Search tags
-https://orgmode.org/manual/Matching-tags-and-properties.html
-https://orgmode.org/worg/org-tutorials/advanced-searching.html
-**** C-c a m  org-tags-view
-**** complex
-***** work
-Select headlines tagged ‘:work:’.
-***** work&boss
-Select headlines tagged ‘:work:’ and ‘:boss:’.
-***** +work-boss
-Select headlines tagged ‘:work:’, but discard those also tagged ‘:boss:’.
-***** work|laptop
-Selects lines tagged ‘:work:’ or ‘:laptop:’.
-***** work|laptop+night
-Like before, but require the ‘:laptop:’ lines to be tagged also ‘:night:’.
-***** work+TODO="WAITING"
-Select ‘:work:’-tagged TODO lines with the specific TODO keyword ‘WAITING’.
-***** work+TODO="WAITING"|home+TODO="WAITING"
-Waiting tasks both at work and at home.
-***** When matching properties
-+work-boss+PRIORITY="A"+Coffee="unlimited"+Effort<2         \
-         +With={Sarah\|Denny}+SCHEDULED>="<2008-10-11>"
-***** Others
-Instead of a tag, you may also specify a regular expression enclosed in curly braces. For example, ‘work+{^boss.*}’ matches headlines that contain the tag ‘:work:’ and any tag starting with ‘boss’.
-*** preventing right alignment of tags
-(setq org-tags-column 0)

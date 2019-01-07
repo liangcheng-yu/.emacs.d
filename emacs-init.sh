@@ -1,12 +1,6 @@
 #!/bin/bash
 
-echo "Setting up emacs configurations..."
-
-# if [ "$#" -ne 1 ]; then
-#     echo "Illegal number of arguments: 1 argument required"
-#     echo "usage: <scriptname> <config_option>"
-#     exit 1
-# fi
+echo "Setting up emacs configurations ..."
 
 CUR_PATH=$(pwd)
 
