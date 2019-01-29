@@ -12,6 +12,14 @@
 (require 'key-bindings)
 (require 'agenda)
 
+(require 'deft)
+(setq deft-extensions '("txt" "tex" "org"))
+(setq deft-directory "~/my-emacs/my-org-mode/.deft/")
+(setq deft-recursive t)
+(global-set-key [f8] 'deft)
+(setq deft-use-filename-as-title t)
+(setq deft-auto-save-interval 0)
+
 ;; OrgMode and Org-bullets
 (add-to-list 'load-path (concat root-path "modules/org-mode/"))
 (require 'org-mode-basic)
